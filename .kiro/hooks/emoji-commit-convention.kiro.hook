@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Convenção de Commits com Emojis",
+  "description": "Ao parar o agente, lembra de criar commits seguindo a convenção: formato [YYYY-mm-dd HH:mm] <emoji> <tipo>: <descrição>, com commits de início (antes de modificar) e conclusão (após finalizar)",
+  "version": "1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "echo \"📋 Lembrete: Siga a convenção de commits!\\n\\n🔹 Formato: [YYYY-mm-dd HH:mm] <emoji> <tipo>: <descrição>\\n\\n🔹 Emojis:\\n   ✨ feat | 🐛 fix | 📝 docs | 🎨 style | ♻️ refactor\\n   ⚡️ perf | ✅ test | 🔧 chore | 🚀 deploy | 🔥 remove | 🔒 security\\n\\n🔹 Fluxo:\\n   1. Commit de INÍCIO: objetivo + resultado esperado + critérios\\n   2. Commit de CONCLUSÃO: confirmação + técnica utilizada\""
+  }
+}
