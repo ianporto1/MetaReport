@@ -1,13 +1,15 @@
 {
   "enabled": true,
-  "name": "Auto Commit com Emojis",
-  "description": "Ao parar o agente, cria commit automatico seguindo a convencao de emojis",
-  "version": "1",
+  "name": "Auto Commit por Task",
+  "description": "Ao completar uma task, cria commit automatico seguindo a convencao de emojis",
+  "version": "2",
   "when": {
     "type": "agentStop"
   },
   "then": {
-    "type": "sendMessage",
-    "message": "Faca um commit das alteracoes realizadas seguindo a convencao: [YYYY-mm-dd HH:mm] <emoji> <tipo>: <descricao>. Use git add . e git commit com mensagem apropriada baseada nas mudancas feitas. Emojis: feat=✨, fix=🐛, docs=📝, style=🎨, refactor=♻️, perf=⚡️, test=✅, chore=🔧, deploy=🚀, remove=🔥, security=🔒"
-  }
+    "type": "askAgent",
+    "prompt": "Verifique se há alterações no git com 'git status'. Se houver arquivos modificados ou novos, faça o commit seguindo a convenção de emojis: ✨ feat, 🐛 fix, 📝 docs, 💄 style, ♻️ refactor, 🧪 test, 🔧 chore. Execute: 1) git add -A 2) git commit -m '[emoji] [tipo]: [descrição breve das alterações]'. Não faça push."
+  },
+  "workspaceFolderName": "MetaReport",
+  "shortName": "emoji-commit-convention"
 }

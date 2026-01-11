@@ -6,38 +6,38 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
 
 ## Tasks
 
-- [-] 1. Setup do projeto e infraestrutura base
-  - [-] 1.1 Criar projeto React com Vite e TypeScript
+- [x] 1. Setup do projeto e infraestrutura base
+  - [x] 1.1 Criar projeto React com Vite e TypeScript
     - Configurar Vite com React e TypeScript
     - Instalar dependências: react-router-dom, @supabase/supabase-js, recharts, fast-check
     - Configurar estrutura de pastas (src/components, src/services, src/types, src/api)
     - _Requirements: 8.1_
 
-  - [ ] 1.2 Configurar Supabase e criar schema do banco
+  - [x] 1.2 Configurar Supabase e criar schema do banco
     - Criar tabelas: users, meta_accounts, reports
     - Configurar Row Level Security (RLS)
     - Criar tipos TypeScript a partir do schema
     - _Requirements: 7.4, 8.2_
 
-  - [ ] 1.3 Configurar estrutura de API routes (Vercel Functions)
+  - [x] 1.3 Configurar estrutura de API routes (Vercel Functions)
     - Criar estrutura em /api com endpoints placeholder
     - Configurar variáveis de ambiente (.env.local)
     - _Requirements: 8.1_
 
-- [ ] 2. Implementar autenticação com Supabase
-  - [ ] 2.1 Criar AuthContext e hooks de autenticação
+- [-] 2. Implementar autenticação com Supabase
+  - [x] 2.1 Criar AuthContext e hooks de autenticação
     - Implementar AuthProvider com estado de sessão
     - Criar hooks useAuth para acesso ao contexto
     - Implementar signIn, signOut e verificação de sessão
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
-  - [ ] 2.2 Criar componentes de UI para autenticação
+  - [x] 2.2 Criar componentes de UI para autenticação
     - Criar LoginPage com formulário email/senha
     - Criar ProtectedRoute para rotas autenticadas
     - Implementar redirecionamento após login/logout
     - _Requirements: 1.1, 1.3_
 
-  - [ ] 2.3 Escrever testes unitários para autenticação
+  - [-] 2.3 Escrever testes unitários para autenticação
     - Testar validação de credenciais
     - Testar estado de sessão
     - _Requirements: 1.1, 1.2_
