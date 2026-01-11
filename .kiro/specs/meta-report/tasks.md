@@ -189,85 +189,85 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Retornar relatório completo
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-- [-] 11. Implementar histórico de relatórios
+- [x] 11. Implementar histórico de relatórios
   - [x] 11.1 Criar endpoint GET /api/reports
     - Listar relatórios do usuário
     - Retornar metadata (datas, timestamp)
     - _Requirements: 7.1, 7.2_
 
-  - [ ] 11.2 Escrever property test para metadata do histórico
+  - [x] 11.2 Escrever property test para metadata do histórico
     - **Property 14: Report History Metadata**
     - **Validates: Requirements 7.2**
 
-  - [ ] 11.3 Criar endpoint GET /api/reports/:id
+  - [x] 11.3 Criar endpoint GET /api/reports/:id
     - Buscar relatório por ID
     - Retornar dados completos
     - _Requirements: 7.3_
 
-- [ ] 12. Implementar exportação de relatórios
-  - [ ] 12.1 Implementar exportação PDF
+- [x] 12. Implementar exportação de relatórios
+  - [x] 12.1 Implementar exportação PDF
     - Usar biblioteca pdfkit ou jspdf
     - Formatar relatório com métricas e gráficos
     - _Requirements: 6.1_
 
-  - [ ] 12.2 Escrever property test para completude do PDF
+  - [x] 12.2 Escrever property test para completude do PDF
     - **Property 12: PDF Export Completeness**
     - **Validates: Requirements 6.1**
 
-  - [ ] 12.3 Implementar exportação CSV
+  - [x] 12.3 Implementar exportação CSV
     - Gerar CSV com dados tabulares
     - Incluir headers e todas as métricas
     - _Requirements: 6.2_
 
-  - [ ] 12.4 Escrever property test para CSV round-trip
+  - [x] 12.4 Escrever property test para CSV round-trip
     - **Property 13: CSV Export Round-Trip**
     - **Validates: Requirements 6.2**
 
-  - [ ] 12.5 Criar endpoint GET /api/reports/:id/export
+  - [x] 12.5 Criar endpoint GET /api/reports/:id/export
     - Aceitar query param format=pdf|csv
     - Retornar arquivo para download
     - _Requirements: 6.1, 6.2, 6.3, 6.4_
 
-- [ ] 13. Checkpoint - Validar geração e exportação de relatórios
+- [x] 13. Checkpoint - Validar geração e exportação de relatórios
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 14. Implementar Dashboard UI
-  - [ ] 14.1 Criar componente DateRangePicker
+- [x] 14. Implementar Dashboard UI
+  - [x] 14.1 Criar componente DateRangePicker
     - Seletor de data inicial e final
     - Opção para período de comparação
     - _Requirements: 4.3, 5.3_
 
-  - [ ] 14.2 Criar componente MetricsCards
+  - [x] 14.2 Criar componente MetricsCards
     - Cards com métricas principais (impressões, cliques, gasto, etc.)
     - Indicadores de variação percentual
     - _Requirements: 5.1, 5.3_
 
-  - [ ] 14.3 Criar componente CampaignChart
+  - [x] 14.3 Criar componente CampaignChart
     - Gráfico de barras/linhas com Recharts
     - Visualização por campanha
     - _Requirements: 5.5_
 
-  - [ ] 14.4 Criar componente DailyChart
+  - [x] 14.4 Criar componente DailyChart
     - Gráfico de linha com breakdown diário
     - _Requirements: 5.2_
 
-  - [ ] 14.5 Criar página Dashboard principal
+  - [x] 14.5 Criar página Dashboard principal
     - Integrar todos os componentes
     - Conectar com API de insights e relatórios
     - _Requirements: 5.1, 5.2, 5.5_
 
-- [ ] 15. Implementar página de histórico de relatórios
-  - [ ] 15.1 Criar componente ReportList
+- [x] 15. Implementar página de histórico de relatórios
+  - [x] 15.1 Criar componente ReportList
     - Listar relatórios com data e período
     - Link para visualização detalhada
     - _Requirements: 7.1, 7.2_
 
-  - [ ] 15.2 Criar página ReportDetail
+  - [x] 15.2 Criar página ReportDetail
     - Exibir relatório completo
     - Botões de exportação PDF/CSV
     - _Requirements: 7.3, 6.1, 6.2_
 
-- [ ] 16. Checkpoint final - Validar aplicação completa
+- [x] 16. Checkpoint final - Validar aplicação completa
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes

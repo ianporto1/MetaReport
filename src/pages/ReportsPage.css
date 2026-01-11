@@ -1,0 +1,22 @@
+.reports-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.reports-header {
+  margin-bottom: 2rem;
+}
+
+.reports-header h1 {
+  margin: 0;
+  color: #212529;
+}
+
+.error-message {
+  padding: 1rem;
+  background: #f8d7da;
+  color: #842029;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}

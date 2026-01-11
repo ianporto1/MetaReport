@@ -1,0 +1,47 @@
+.date-range-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.date-range-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.date-range-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #495057;
+}
+
+.date-range-row input[type="date"] {
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.compare-section {
+  border-top: 1px solid #dee2e6;
+  padding-top: 1rem;
+}
+
+.compare-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.compare-toggle input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+}

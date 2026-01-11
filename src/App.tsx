@@ -1,5 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { LoginPage } from '@/pages/LoginPage'
+import { DashboardPage } from '@/pages/DashboardPage'
+import { ReportsPage } from '@/pages/ReportsPage'
+import { ReportDetailPage } from '@/pages/ReportDetailPage'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 
 function App() {
@@ -10,7 +13,23 @@ function App() {
         path="/"
         element={
           <ProtectedRoute>
-            <div>Dashboard - Em construção</div>
+            <DashboardPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/reports"
+        element={
+          <ProtectedRoute>
+            <ReportsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/reports/:id"
+        element={
+          <ProtectedRoute>
+            <ReportDetailPage />
           </ProtectedRoute>
         }
       />
