@@ -24,7 +24,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Configurar variáveis de ambiente (.env.local)
     - _Requirements: 8.1_
 
-- [-] 2. Implementar autenticação com Supabase
+- [x] 2. Implementar autenticação com Supabase
   - [x] 2.1 Criar AuthContext e hooks de autenticação
     - Implementar AuthProvider com estado de sessão
     - Criar hooks useAuth para acesso ao contexto
@@ -37,68 +37,68 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Implementar redirecionamento após login/logout
     - _Requirements: 1.1, 1.3_
 
-  - [-] 2.3 Escrever testes unitários para autenticação
+  - [x] 2.3 Escrever testes unitários para autenticação
     - Testar validação de credenciais
     - Testar estado de sessão
     - _Requirements: 1.1, 1.2_
 
-- [ ] 3. Implementar serviço de criptografia de tokens
-  - [ ] 3.1 Criar TokenService para encrypt/decrypt
+- [x] 3. Implementar serviço de criptografia de tokens
+  - [x] 3.1 Criar TokenService para encrypt/decrypt
     - Implementar criptografia AES-256-GCM
     - Usar variável de ambiente para chave de criptografia
     - _Requirements: 2.2, 8.2_
 
-  - [ ] 3.2 Escrever property test para criptografia de tokens
+  - [x] 3.2 Escrever property test para criptografia de tokens
     - **Property 2: Token Encryption Round-Trip**
     - **Validates: Requirements 2.2, 8.2**
 
-- [ ] 4. Implementar conexão OAuth com Meta
-  - [ ] 4.1 Criar endpoint /api/auth/meta para iniciar OAuth
+- [x] 4. Implementar conexão OAuth com Meta
+  - [x] 4.1 Criar endpoint /api/auth/meta para iniciar OAuth
     - Gerar URL de autorização com scopes ads_read e business_management
     - Implementar state parameter para segurança CSRF
     - _Requirements: 2.1_
 
-  - [ ] 4.2 Escrever property test para URL OAuth
+  - [x] 4.2 Escrever property test para URL OAuth
     - **Property 1: OAuth URL Permission Integrity**
     - **Validates: Requirements 2.1**
 
-  - [ ] 4.3 Criar endpoint /api/auth/meta/callback para processar OAuth
+  - [x] 4.3 Criar endpoint /api/auth/meta/callback para processar OAuth
     - Trocar code por access_token
     - Criptografar e armazenar token no Supabase
     - Calcular e armazenar token_expiration
     - _Requirements: 2.2, 2.3, 2.4_
 
-  - [ ] 4.4 Criar componente MetaConnectionButton
+  - [x] 4.4 Criar componente MetaConnectionButton
     - Botão "Conectar Facebook" que inicia fluxo OAuth
     - Exibir estado de conexão (conectado/desconectado)
     - Tratar erros e cancelamentos
     - _Requirements: 2.1, 2.3, 2.5_
 
-  - [ ] 4.5 Escrever property test para status de conexão
+  - [x] 4.5 Escrever property test para status de conexão
     - **Property 3: Connected Account Status**
     - **Validates: Requirements 2.5**
 
-- [ ] 5. Checkpoint - Validar autenticação e OAuth
+- [x] 5. Checkpoint - Validar autenticação e OAuth
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 6. Implementar listagem de contas de anúncios
-  - [ ] 6.1 Criar MetaApiService para chamadas à Graph API
+- [-] 6. Implementar listagem de contas de anúncios
+  - [x] 6.1 Criar MetaApiService para chamadas à Graph API
     - Implementar getAdAccounts usando /me/adaccounts
     - Implementar tratamento de erros da API
     - _Requirements: 3.1, 4.4_
 
-  - [ ] 6.2 Criar endpoint /api/meta/accounts
+  - [x] 6.2 Criar endpoint /api/meta/accounts
     - Buscar contas usando MetaApiService
     - Retornar lista formatada de AdAccount
     - _Requirements: 3.1_
 
-  - [ ] 6.3 Criar componente AccountSelector
+  - [x] 6.3 Criar componente AccountSelector
     - Listar contas disponíveis
     - Permitir seleção de uma conta
     - Persistir seleção no Supabase
     - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
-  - [ ] 6.4 Escrever property test para persistência de conta
+  - [-] 6.4 Escrever property test para persistência de conta
     - **Property 4: Account Selection Persistence**
     - **Validates: Requirements 3.3**
 

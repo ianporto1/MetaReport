@@ -1,0 +1,53 @@
+.account-selector {
+  padding: 1rem;
+}
+
+.account-selector h3 {
+  margin: 0 0 1rem;
+  color: #333;
+}
+
+.account-selector.loading,
+.account-selector.empty {
+  color: #666;
+  text-align: center;
+  padding: 2rem;
+}
+
+.account-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.account-item {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.account-item:hover {
+  border-color: #1877f2;
+  background: #f8f9fa;
+}
+
+.account-item.selected {
+  border-color: #1877f2;
+  background: #e7f3ff;
+}
+
+.account-name {
+  display: block;
+  font-weight: 500;
+  color: #333;
+}
+
+.account-meta {
+  display: block;
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.25rem;
+}

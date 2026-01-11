@@ -1,0 +1,44 @@
+.meta-connection-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.meta-connection-button:hover:not(:disabled) {
+  background: #166fe5;
+}
+
+.meta-connection-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.facebook-icon {
+  flex-shrink: 0;
+}
+
+.meta-connection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.meta-connection.connected {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-icon {
+  font-weight: bold;
+}
