@@ -1,5 +1,25 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
   "rewrites": [
+    { "source": "/api/auth/meta/callback", "destination": "/api/auth/meta/callback" },
+    { "source": "/api/auth/meta", "destination": "/api/auth/meta" },
+    { "source": "/api/meta/accounts", "destination": "/api/meta/accounts" },
+    { "source": "/api/meta/insights", "destination": "/api/meta/insights" },
+    { "source": "/api/reports/generate", "destination": "/api/reports/generate" },
+    { "source": "/api/reports/:id/export", "destination": "/api/reports/[id]/export" },
+    { "source": "/api/reports/:id", "destination": "/api/reports/[id]" },
+    { "source": "/api/reports", "destination": "/api/reports/index" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
+  ],
+  "env": {
+    "VITE_SUPABASE_URL": "@vite_supabase_url",
+    "VITE_SUPABASE_ANON_KEY": "@vite_supabase_anon_key",
+    "VITE_META_APP_ID": "@vite_meta_app_id",
+    "SUPABASE_URL": "@supabase_url",
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
+    "META_APP_SECRET": "@meta_app_secret",
+    "ENCRYPTION_KEY": "@encryption_key"
+  }
 }
