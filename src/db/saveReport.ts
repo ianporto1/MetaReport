@@ -22,7 +22,7 @@ export async function saveReport(params: SaveReportParams) {
       end_date: params.endDate,
       compare_start_date: params.compareStartDate || null,
       compare_end_date: params.compareEndDate || null,
-      data: params.data as Json,
+      data: params.data as unknown as Json,
     })
     .select()
     .single()

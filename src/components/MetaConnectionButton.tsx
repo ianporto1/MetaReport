@@ -8,7 +8,8 @@ interface MetaConnectionButtonProps {
   isConnected?: boolean
 }
 
-export function MetaConnectionButton({ onConnected, onError, isConnected = false }: MetaConnectionButtonProps) {
+export function MetaConnectionButton({ onConnected: _onConnected, onError, isConnected = false }: MetaConnectionButtonProps) {
+  void _onConnected // Reserved for future use after OAuth callback
   const [isLoading, setIsLoading] = useState(false)
 
   async function handleConnect() {

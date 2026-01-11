@@ -45,7 +45,7 @@ describe('useAuth', () => {
 
   it('should call signInWithPassword on signIn', async () => {
     vi.mocked(supabase.auth.signInWithPassword).mockResolvedValue({
-      data: { user: null, session: null },
+      data: { user: {} as never, session: {} as never },
       error: null
     })
 
@@ -62,10 +62,10 @@ describe('useAuth', () => {
   })
 
   it('should throw error on invalid credentials', async () => {
-    const mockError = new Error('Invalid credentials')
+    const mockError = { message: 'Invalid credentials', code: 'invalid_credentials', status: 401, __isAuthError: true } as const
     vi.mocked(supabase.auth.signInWithPassword).mockResolvedValue({
       data: { user: null, session: null },
-      error: mockError
+      error: mockError as never
     })
 
     const { result } = renderHook(() => useAuth(), { wrapper })
