@@ -6,8 +6,8 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
 
 ## Tasks
 
-- [ ] 1. Setup do projeto e infraestrutura base
-  - [ ] 1.1 Criar projeto React com Vite e TypeScript
+- [-] 1. Setup do projeto e infraestrutura base
+  - [-] 1.1 Criar projeto React com Vite e TypeScript
     - Configurar Vite com React e TypeScript
     - Instalar dependências: react-router-dom, @supabase/supabase-js, recharts, fast-check
     - Configurar estrutura de pastas (src/components, src/services, src/types, src/api)
@@ -37,7 +37,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Implementar redirecionamento após login/logout
     - _Requirements: 1.1, 1.3_
 
-  - [ ]* 2.3 Escrever testes unitários para autenticação
+  - [ ] 2.3 Escrever testes unitários para autenticação
     - Testar validação de credenciais
     - Testar estado de sessão
     - _Requirements: 1.1, 1.2_
@@ -48,7 +48,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Usar variável de ambiente para chave de criptografia
     - _Requirements: 2.2, 8.2_
 
-  - [ ]* 3.2 Escrever property test para criptografia de tokens
+  - [ ] 3.2 Escrever property test para criptografia de tokens
     - **Property 2: Token Encryption Round-Trip**
     - **Validates: Requirements 2.2, 8.2**
 
@@ -58,7 +58,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Implementar state parameter para segurança CSRF
     - _Requirements: 2.1_
 
-  - [ ]* 4.2 Escrever property test para URL OAuth
+  - [ ] 4.2 Escrever property test para URL OAuth
     - **Property 1: OAuth URL Permission Integrity**
     - **Validates: Requirements 2.1**
 
@@ -74,7 +74,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Tratar erros e cancelamentos
     - _Requirements: 2.1, 2.3, 2.5_
 
-  - [ ]* 4.5 Escrever property test para status de conexão
+  - [ ] 4.5 Escrever property test para status de conexão
     - **Property 3: Connected Account Status**
     - **Validates: Requirements 2.5**
 
@@ -98,7 +98,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Persistir seleção no Supabase
     - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
-  - [ ]* 6.4 Escrever property test para persistência de conta
+  - [ ] 6.4 Escrever property test para persistência de conta
     - **Property 4: Account Selection Persistence**
     - **Validates: Requirements 3.3**
 
@@ -109,7 +109,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Extrair: impressions, clicks, cpc, cpm, spend, ctr
     - _Requirements: 4.1, 4.2_
 
-  - [ ]* 7.2 Escrever property test para completude de campos
+  - [ ] 7.2 Escrever property test para completude de campos
     - **Property 5: Insight Field Completeness**
     - **Validates: Requirements 4.2**
 
@@ -118,7 +118,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Validar formato de datas
     - _Requirements: 4.3_
 
-  - [ ]* 7.4 Escrever property test para filtro de datas
+  - [ ] 7.4 Escrever property test para filtro de datas
     - **Property 6: Date Range Filter Accuracy**
     - **Validates: Requirements 4.3**
 
@@ -128,7 +128,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Máximo de 3 tentativas
     - _Requirements: 4.5_
 
-  - [ ]* 7.6 Escrever property test para exponential backoff
+  - [ ] 7.6 Escrever property test para exponential backoff
     - **Property 7: Exponential Backoff Retry**
     - **Validates: Requirements 4.5**
 
@@ -143,7 +143,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Implementar TTL para expiração
     - _Requirements: 8.5_
 
-  - [ ]* 8.2 Escrever property test para consistência de cache
+  - [ ] 8.2 Escrever property test para consistência de cache
     - **Property 15: Cache Hit Consistency**
     - **Validates: Requirements 8.5**
 
@@ -157,11 +157,11 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Gerar breakdown diário
     - _Requirements: 5.1, 5.2_
 
-  - [ ]* 10.2 Escrever property test para consolidação por campanha
+  - [ ] 10.2 Escrever property test para consolidação por campanha
     - **Property 8: Campaign Consolidation**
     - **Validates: Requirements 5.1**
 
-  - [ ]* 10.3 Escrever property test para breakdown diário
+  - [ ] 10.3 Escrever property test para breakdown diário
     - **Property 9: Daily Breakdown Presence**
     - **Validates: Requirements 5.2**
 
@@ -170,7 +170,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Calcular percentual de variação
     - _Requirements: 5.3_
 
-  - [ ]* 10.5 Escrever property test para cálculo de comparação
+  - [ ] 10.5 Escrever property test para cálculo de comparação
     - **Property 10: Period Comparison Calculation**
     - **Validates: Requirements 5.3**
 
@@ -179,7 +179,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Incluir timestamp de criação
     - _Requirements: 5.4, 7.4_
 
-  - [ ]* 10.7 Escrever property test para persistência round-trip
+  - [ ] 10.7 Escrever property test para persistência round-trip
     - **Property 11: Report Persistence Round-Trip**
     - **Validates: Requirements 5.4, 7.3, 7.4**
 
@@ -195,7 +195,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Retornar metadata (datas, timestamp)
     - _Requirements: 7.1, 7.2_
 
-  - [ ]* 11.2 Escrever property test para metadata do histórico
+  - [ ] 11.2 Escrever property test para metadata do histórico
     - **Property 14: Report History Metadata**
     - **Validates: Requirements 7.2**
 
@@ -210,7 +210,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Formatar relatório com métricas e gráficos
     - _Requirements: 6.1_
 
-  - [ ]* 12.2 Escrever property test para completude do PDF
+  - [ ] 12.2 Escrever property test para completude do PDF
     - **Property 12: PDF Export Completeness**
     - **Validates: Requirements 6.1**
 
@@ -219,7 +219,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Incluir headers e todas as métricas
     - _Requirements: 6.2_
 
-  - [ ]* 12.4 Escrever property test para CSV round-trip
+  - [ ] 12.4 Escrever property test para CSV round-trip
     - **Property 13: CSV Export Round-Trip**
     - **Validates: Requirements 6.2**
 
@@ -272,7 +272,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
 
 ## Notes
 
-- Tasks marcadas com `*` são opcionais e podem ser puladas para um MVP mais rápido
+- Todas as tasks são obrigatórias, incluindo testes unitários e property-based tests
 - Cada task referencia requisitos específicos para rastreabilidade
 - Checkpoints garantem validação incremental
 - Property tests validam propriedades universais de corretude
