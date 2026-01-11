@@ -16,6 +16,73 @@
   color: #212529;
 }
 
+.dashboard-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.connection-prompt {
+  text-align: center;
+  padding: 3rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.connection-prompt h2 {
+  margin-bottom: 0.5rem;
+  color: #212529;
+}
+
+.connection-prompt p {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.connection-status {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.account-selection {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.account-selection h2 {
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.selected-account {
+  color: #495057;
+  font-weight: 500;
+}
+
+.change-account-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  color: #6c757d;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.change-account-btn:hover {
+  background: #f8f9fa;
+}
+
 .dashboard-controls {
   display: flex;
   gap: 1rem;

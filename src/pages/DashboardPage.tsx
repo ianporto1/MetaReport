@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { DateRangePicker } from '@/components/DateRangePicker'
 import { MetricsCards } from '@/components/MetricsCards'
 import { CampaignChart } from '@/components/CampaignChart'
@@ -12,16 +12,38 @@ import './DashboardPage.css'
 export function DashboardPage() {
   const { session } = useAuth()
   const [isMetaConnected, setIsMetaConnected] = useState(false)
-  const [selectedAccountId, setSelectedAccountId] = useState<string>('')
+  const [checkingConnection, setCheckingConnection] = useState(true)
+  const [selectedAccount, setSelectedAccount] = useState<AdAccount | null>(null)
   const [startDate, setStartDate] = useState(getDefaultStartDate())
   const [endDate, setEndDate] = useState(getDefaultEndDate())
   const [reportData, setReportData] = useState<ReportData | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
+  useEffect(() => {
+    checkMetaConnection()
+  }, [session?.access_token])
+
+  const checkMetaConnection = async () => {
+    if (!session?.access_token) {
+      setCheckingConnection(false)
+      return
+    }
+
+    try {
+      const response = await fetch('/api/meta/accounts', {
+        headers: { Authorization: `Bearer ${session.access_token}` },
+      })
+      setIsMetaConnected(response.ok)
+    } catch {
+      setIsMetaConnected(false)
+    } finally {
+      setCheckingConnection(false)
+    }
+  }
+
   const handleAccountSelect = (account: AdAccount) => {
-    setSelectedAccountId(account.id)
-    setIsMetaConnected(true)
+    setSelectedAccount(account)
   }
 
   const handleDateChange = (start: string, end: string) => {
@@ -30,7 +52,7 @@ export function DashboardPage() {
   }
 
   const handleGenerateReport = async () => {
-    if (!selectedAccountId || !session?.access_token) return
+    if (!selectedAccount || !session?.access_token) return
 
     setLoading(true)
     setError(null)
@@ -43,7 +65,7 @@ export function DashboardPage() {
           Authorization: `Bearer ${session.access_token}`,
         },
         body: JSON.stringify({
-          accountId: selectedAccountId,
+          accountId: selectedAccount.id,
           startDate,
           endDate,
         }),
@@ -60,22 +82,66 @@ export function DashboardPage() {
     }
   }
 
+  if (checkingConnection) {
+    return (
+      <div className="dashboard-page">
+        <div className="dashboard-loading">Verificando conexão...</div>
+      </div>
+    )
+  }
+
+  // Step 1: Show OAuth button if not connected
+  if (!isMetaConnected) {
+    return (
+      <div className="dashboard-page">
+        <header className="dashboard-header">
+          <h1>Dashboard</h1>
+        </header>
+        <div className="connection-prompt">
+          <h2>Conecte sua conta Meta Ads</h2>
+          <p>Para gerar relatórios, você precisa conectar sua conta do Facebook.</p>
+          <MetaConnectionButton onError={setError} />
+          {error && <div className="error-message">{error}</div>}
+        </div>
+      </div>
+    )
+  }
+
+  // Step 2: Show account selector if no account selected
+  if (!selectedAccount) {
+    return (
+      <div className="dashboard-page">
+        <header className="dashboard-header">
+          <h1>Dashboard</h1>
+          <span className="connection-status">✓ Meta conectado</span>
+        </header>
+        {error && <div className="error-message">{error}</div>}
+        <div className="account-selection">
+          <h2>Selecione uma conta de anúncios</h2>
+          <AccountSelector onSelect={handleAccountSelect} onError={setError} />
+        </div>
+      </div>
+    )
+  }
+
+  // Step 3: Show full dashboard with report generation
   const dailyData = aggregateDailyData(reportData)
 
   return (
     <div className="dashboard-page">
       <header className="dashboard-header">
         <h1>Dashboard</h1>
-        <MetaConnectionButton 
-          isConnected={isMetaConnected}
-          onError={setError}
-        />
+        <div className="header-info">
+          <span className="selected-account">{selectedAccount.name}</span>
+          <button className="change-account-btn" onClick={() => setSelectedAccount(null)}>
+            Trocar conta
+          </button>
+        </div>
       </header>
 
       {error && <div className="error-message">{error}</div>}
 
       <div className="dashboard-controls">
-        <AccountSelector onSelect={handleAccountSelect} onError={setError} />
         <DateRangePicker
           startDate={startDate}
           endDate={endDate}
@@ -84,7 +150,7 @@ export function DashboardPage() {
         <button
           className="generate-btn"
           onClick={handleGenerateReport}
-          disabled={!selectedAccountId || loading}
+          disabled={loading}
         >
           {loading ? 'Gerando...' : 'Gerar Relatório'}
         </button>
