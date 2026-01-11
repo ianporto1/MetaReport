@@ -81,7 +81,7 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
 - [x] 5. Checkpoint - Validar autenticação e OAuth
   - Ensure all tests pass, ask the user if questions arise.
 
-- [-] 6. Implementar listagem de contas de anúncios
+- [x] 6. Implementar listagem de contas de anúncios
   - [x] 6.1 Criar MetaApiService para chamadas à Graph API
     - Implementar getAdAccounts usando /me/adaccounts
     - Implementar tratamento de erros da API
@@ -98,99 +98,99 @@ Implementação do MetaReport seguindo arquitetura serverless com React + Vite n
     - Persistir seleção no Supabase
     - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
-  - [-] 6.4 Escrever property test para persistência de conta
+  - [x] 6.4 Escrever property test para persistência de conta
     - **Property 4: Account Selection Persistence**
     - **Validates: Requirements 3.3**
 
-- [ ] 7. Implementar coleta de insights de campanhas
-  - [ ] 7.1 Estender MetaApiService com getCampaigns e getInsights
+- [x] 7. Implementar coleta de insights de campanhas
+  - [x] 7.1 Estender MetaApiService com getCampaigns e getInsights
     - Implementar chamada a /act_{id}/campaigns
     - Implementar chamada a /act_{id}/insights com métricas
     - Extrair: impressions, clicks, cpc, cpm, spend, ctr
     - _Requirements: 4.1, 4.2_
 
-  - [ ] 7.2 Escrever property test para completude de campos
+  - [x] 7.2 Escrever property test para completude de campos
     - **Property 5: Insight Field Completeness**
     - **Validates: Requirements 4.2**
 
-  - [ ] 7.3 Implementar filtro por período
+  - [x] 7.3 Implementar filtro por período
     - Adicionar parâmetros time_range na chamada de insights
     - Validar formato de datas
     - _Requirements: 4.3_
 
-  - [ ] 7.4 Escrever property test para filtro de datas
+  - [x] 7.4 Escrever property test para filtro de datas
     - **Property 6: Date Range Filter Accuracy**
     - **Validates: Requirements 4.3**
 
-  - [ ] 7.5 Implementar retry com exponential backoff
+  - [x] 7.5 Implementar retry com exponential backoff
     - Criar função de retry para rate limiting
     - Implementar delay exponencial (baseDelay * 2^attempt)
     - Máximo de 3 tentativas
     - _Requirements: 4.5_
 
-  - [ ] 7.6 Escrever property test para exponential backoff
+  - [x] 7.6 Escrever property test para exponential backoff
     - **Property 7: Exponential Backoff Retry**
     - **Validates: Requirements 4.5**
 
-  - [ ] 7.7 Criar endpoint /api/meta/insights
+  - [x] 7.7 Criar endpoint /api/meta/insights
     - Receber accountId, startDate, endDate
     - Retornar CampaignInsight[] formatado
     - _Requirements: 4.1, 4.2, 4.3_
 
-- [ ] 8. Implementar serviço de cache
-  - [ ] 8.1 Criar CacheService com get/set/invalidate
+- [x] 8. Implementar serviço de cache
+  - [x] 8.1 Criar CacheService com get/set/invalidate
     - Usar Map em memória para MVP (pode evoluir para Redis)
     - Implementar TTL para expiração
     - _Requirements: 8.5_
 
-  - [ ] 8.2 Escrever property test para consistência de cache
+  - [x] 8.2 Escrever property test para consistência de cache
     - **Property 15: Cache Hit Consistency**
     - **Validates: Requirements 8.5**
 
-- [ ] 9. Checkpoint - Validar integração com Meta API
+- [x] 9. Checkpoint - Validar integração com Meta API
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 10. Implementar geração de relatórios
-  - [ ] 10.1 Criar ReportService com lógica de geração
+- [x] 10. Implementar geração de relatórios
+  - [x] 10.1 Criar ReportService com lógica de geração
     - Consolidar insights por campanha
     - Calcular totais agregados
     - Gerar breakdown diário
     - _Requirements: 5.1, 5.2_
 
-  - [ ] 10.2 Escrever property test para consolidação por campanha
+  - [x] 10.2 Escrever property test para consolidação por campanha
     - **Property 8: Campaign Consolidation**
     - **Validates: Requirements 5.1**
 
-  - [ ] 10.3 Escrever property test para breakdown diário
+  - [x] 10.3 Escrever property test para breakdown diário
     - **Property 9: Daily Breakdown Presence**
     - **Validates: Requirements 5.2**
 
-  - [ ] 10.4 Implementar comparação de períodos
+  - [x] 10.4 Implementar comparação de períodos
     - Calcular métricas para período de comparação
     - Calcular percentual de variação
     - _Requirements: 5.3_
 
-  - [ ] 10.5 Escrever property test para cálculo de comparação
+  - [x] 10.5 Escrever property test para cálculo de comparação
     - **Property 10: Period Comparison Calculation**
     - **Validates: Requirements 5.3**
 
-  - [ ] 10.6 Implementar persistência de relatórios
+  - [x] 10.6 Implementar persistência de relatórios
     - Salvar relatório como JSONB no Supabase
     - Incluir timestamp de criação
     - _Requirements: 5.4, 7.4_
 
-  - [ ] 10.7 Escrever property test para persistência round-trip
+  - [x] 10.7 Escrever property test para persistência round-trip
     - **Property 11: Report Persistence Round-Trip**
     - **Validates: Requirements 5.4, 7.3, 7.4**
 
-  - [ ] 10.8 Criar endpoint /api/reports/generate
+  - [x] 10.8 Criar endpoint /api/reports/generate
     - Receber parâmetros de período
     - Gerar e persistir relatório
     - Retornar relatório completo
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-- [ ] 11. Implementar histórico de relatórios
-  - [ ] 11.1 Criar endpoint GET /api/reports
+- [-] 11. Implementar histórico de relatórios
+  - [x] 11.1 Criar endpoint GET /api/reports
     - Listar relatórios do usuário
     - Retornar metadata (datas, timestamp)
     - _Requirements: 7.1, 7.2_

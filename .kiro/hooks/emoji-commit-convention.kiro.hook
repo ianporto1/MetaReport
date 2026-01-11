@@ -4,7 +4,7 @@
   "description": "Ao completar uma task, cria commit automatico seguindo a convencao de emojis",
   "version": "2",
   "when": {
-    "type": "agentStop"
+    "type": "userTriggered"
   },
   "then": {
     "type": "askAgent",
